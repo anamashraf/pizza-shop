@@ -5,11 +5,14 @@
  */
 package com.pizzashop;
 
+
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.JOptionPane;
-import com.pizzashop.Dashboard;
+import com.pizzashop.*;
+import com.sql.DbConnect;
 import java.awt.Toolkit;
+import java.sql.ResultSet;
 
 /**
  *
@@ -49,13 +52,13 @@ public class loginform extends javax.swing.JFrame {
         jLabel2.setText("Username");
 
         usernameInput.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        usernameInput.setText("anam");
+        usernameInput.setText("admin");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Password");
 
         passwordInput.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        passwordInput.setText("ashraf");
+        passwordInput.setText("Admin123");
 
         resetBtn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         resetBtn.setText("Reset");
@@ -167,15 +170,25 @@ public class loginform extends javax.swing.JFrame {
     private void loginBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtn1ActionPerformed
         String username = usernameInput.getText();
         String password = passwordInput.getText();
+        DbConnect dbCnn = new DbConnect();
+        String[] params = { username, password };
         
-        if (username.equals("anam") && password.equals("ashraf") ) {
-//            resetBtnActionPerformed(evt);
-            Dashboard dashboard = new Dashboard();
-            dashboard.setVisible(true);
-            this.setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(null, "Username or Password is wrong");
+        try{
+            ResultSet rs = dbCnn.runQuery("Select name, username, password from users where username=? AND password=? LIMIT 1", params);
+            if (rs.next()) {
+    //            resetBtnActionPerformed(evt);
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Username or Password is wrong");
+            }
         }
+        catch(Exception exp) {
+            JOptionPane.showMessageDialog(null, exp);
+        }
+        
+        
     }//GEN-LAST:event_loginBtn1ActionPerformed
 
     /**

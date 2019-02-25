@@ -32,58 +32,58 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        newPizzaLnk = new javax.swing.JMenu();
-        viewPizzaListLnk = new javax.swing.JMenu();
-        viewPizzaListLnk1 = new javax.swing.JMenu();
+        newPizzaBtn = new javax.swing.JButton();
+        listBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        newPizzaLnk.setText("New");
-        newPizzaLnk.addActionListener(new java.awt.event.ActionListener() {
+        newPizzaBtn.setText("New Pizza");
+        newPizzaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newPizzaLnkActionPerformed(evt);
+                newPizzaBtnActionPerformed(evt);
             }
         });
-        jMenuBar1.add(newPizzaLnk);
 
-        viewPizzaListLnk.setText("List");
-        viewPizzaListLnk.addActionListener(new java.awt.event.ActionListener() {
+        listBtn.setText("View List");
+        listBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewPizzaListLnkActionPerformed(evt);
+                listBtnActionPerformed(evt);
             }
         });
-        jMenuBar1.add(viewPizzaListLnk);
-
-        viewPizzaListLnk1.setText("Update");
-        jMenuBar1.add(viewPizzaListLnk1);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1233, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(newPizzaBtn)
+                .addGap(34, 34, 34)
+                .addComponent(listBtn)
+                .addContainerGap(948, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newPizzaBtn)
+                    .addComponent(listBtn))
+                .addContainerGap(481, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void newPizzaLnkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPizzaLnkActionPerformed
-        JOptionPane.showMessageDialog(null, "Username or Password is wrong");
-//        PizzaFormNew newPizzaForm = new PizzaFormNew();
-//        newPizzaForm.setVisible(true);
-    }//GEN-LAST:event_newPizzaLnkActionPerformed
+    private void newPizzaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPizzaBtnActionPerformed
+        PizzaFormNew pfn = new PizzaFormNew();
+        pfn.setVisible(true);
+    }//GEN-LAST:event_newPizzaBtnActionPerformed
 
-    private void viewPizzaListLnkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPizzaListLnkActionPerformed
-        
-//        JOptionPane.showMessageDialog(null, "Username or Password is wrong");
-    }//GEN-LAST:event_viewPizzaListLnkActionPerformed
+    private void listBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listBtnActionPerformed
+        PizzaFormList pfList = new PizzaFormList();
+        pfList.setVisible(true);
+    }//GEN-LAST:event_listBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,9 +122,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu newPizzaLnk;
-    private javax.swing.JMenu viewPizzaListLnk;
-    private javax.swing.JMenu viewPizzaListLnk1;
+    private javax.swing.JButton listBtn;
+    private javax.swing.JButton newPizzaBtn;
     // End of variables declaration//GEN-END:variables
 }
