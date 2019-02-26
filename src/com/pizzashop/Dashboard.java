@@ -34,6 +34,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         newPizzaBtn = new javax.swing.JButton();
         listBtn = new javax.swing.JButton();
+        newOrderBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +52,13 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        newOrderBtn.setText("New Order");
+        newOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newOrderBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,7 +68,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(newPizzaBtn)
                 .addGap(34, 34, 34)
                 .addComponent(listBtn)
-                .addContainerGap(948, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(newOrderBtn)
+                .addContainerGap(845, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,7 +78,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(117, 117, 117)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newPizzaBtn)
-                    .addComponent(listBtn))
+                    .addComponent(listBtn)
+                    .addComponent(newOrderBtn))
                 .addContainerGap(481, Short.MAX_VALUE))
         );
 
@@ -84,6 +95,12 @@ public class Dashboard extends javax.swing.JFrame {
         PizzaFormList pfList = new PizzaFormList();
         pfList.setVisible(true);
     }//GEN-LAST:event_listBtnActionPerformed
+
+    private void newOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newOrderBtnActionPerformed
+        OrderFormNew noForm = new OrderFormNew();
+        noForm.setVisible(true);
+                
+    }//GEN-LAST:event_newOrderBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +140,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton listBtn;
+    private javax.swing.JButton newOrderBtn;
     private javax.swing.JButton newPizzaBtn;
     // End of variables declaration//GEN-END:variables
 }

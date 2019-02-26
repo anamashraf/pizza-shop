@@ -94,16 +94,16 @@ public class Pizza {
     }
     
     // Setters
-    public void getName (String Name) {
+    public void setName (String Name) {
         name = Name;
     }
-    public void getToppings (String Toppings) {
+    public void setToppings (String Toppings) {
         toppings = Toppings;
     }
-    public void getPrice (float Price) {
+    public void setPrice (float Price) {
         price = Price;
     }
-    public void getSize (String Size) {
+    public void setSize (String Size) {
         size = Size;
     }
 }

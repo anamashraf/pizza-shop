@@ -28,7 +28,9 @@
               <Component id="newPizzaBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="listBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="948" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="newOrderBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="845" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,6 +41,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="newPizzaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="listBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newOrderBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="481" max="32767" attributes="0"/>
           </Group>
@@ -60,6 +63,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="newOrderBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="New Order"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newOrderBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

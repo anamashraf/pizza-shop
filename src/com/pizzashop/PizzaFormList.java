@@ -162,11 +162,12 @@ public class PizzaFormList extends javax.swing.JFrame {
         Object[] row = new Object[5];
         
         for (int i=0; i<pizzas.size(); i++ ) {
-            row[0] = pizzas.get(i).getId();
-            row[1] = pizzas.get(i).getName();
-            row[2] = pizzas.get(i).getToppings();
-            row[3] = pizzas.get(i).getPrice();
-            row[4] = pizzas.get(i).getSize();
+            Pizza pizza = pizzas.get(i);
+            row[0] = pizza.getId();
+            row[1] = pizza.getName();
+            row[2] = pizza.getToppings();
+            row[3] = pizza.getPrice();
+            row[4] = pizza.getSize();
             pizzasTblModel.addRow(row);
         }
     }
